@@ -15,22 +15,20 @@ let coronaTracker = {
 
         let data = this.getUpdate();
         data.then(data1 => {
-            console.log(data1);
+            // console.log(data1);
             document.querySelector('#death').innerText = data1.Global.TotalDeaths;
             document.querySelector('#confirmed').innerText = data1.Global.NewConfirmed;
             document.querySelector('#recoverd').innerText = data1.Global.TotalRecovered;
         })
         
-
     },
    
 };
     // search : function(newUrl)
-
-
 coronaTracker.updateData();
 
 document.getElementById('refresh').addEventListener('click', () => {
     console.log("clicked");
+    coronaTracker.updateData();
 })
 
