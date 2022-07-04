@@ -15,7 +15,8 @@ let coronaTracker = {
 
         let data = this.getUpdate();
         data.then(data1 => {
-             document.querySelector('#death').innerText = data1.Global.TotalDeaths;
+            console.log(data1);
+            document.querySelector('#death').innerText = data1.Global.TotalDeaths;
             document.querySelector('#confirmed').innerText = data1.Global.NewConfirmed;
             document.querySelector('#recoverd').innerText = data1.Global.TotalRecovered;
         })
@@ -23,14 +24,13 @@ let coronaTracker = {
 
     },
    
-    }
+};
     // search : function(newUrl)
 
 
 coronaTracker.updateData();
 
-document.querySelector('#refresh').addEventListener('click', () => {
-        this.coronaTracker.updateData();
+document.getElementById('refresh').addEventListener('click', () => {
+    console.log("clicked");
 })
-
 
